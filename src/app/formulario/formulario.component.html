@@ -1,0 +1,31 @@
+<h5 class="text-success my-3 text-center">Detalle Producto</h5>
+
+
+<!-- f.form.valid && agregarProducto = solo se podra hacer submit cuando el formulario sea valido. -->
+<form class="my-4 w-50 mx-auto" #f="ngForm" (submit)="f.form.valid && guardarProducto($event)">
+    <!-- #f="ngForm" = ngForm, es una directiva de angular que permite mejor manejo de formularios, permitiendo un manejo facil de validacio0nes -->
+
+    <div class="d-flex justify-content-between align-items-center">
+
+        <input type="text" id="descripcion" name="descripcion" placeholder="Descripción Producto"
+            class="form-control me-2 w-75" autocomplete="off" [(ngModel)]="descripcionInput" required>
+
+        <input type="number" id="precio" name="precio" class="form-control w-25 me-2" placeholder="Precio"
+            autocomplete="off" [(ngModel)]=" precioInput" required>
+
+    </div  >
+
+    
+    <div class="d-flex justify-content-center mt-3">
+        <button type="submit" class="btn btn-primary">Guardar Producto</button>
+
+       @if(productoId !== null){
+        <button type="button" class="btn btn-warning mx-3" (click)="eliminarProducto()">Eliminar Producto</button>
+       }
+
+        <button type="button" class="btn btn-danger mx-3" (click)="cancelar()">Cancelar</button>
+    </div>
+
+</form>
+
+<!-- required, define que los campos sean obligatorio y no pueda hacer submit -->

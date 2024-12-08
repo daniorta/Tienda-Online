@@ -1,0 +1,27 @@
+<!-- <h3 class="text-warning">Listado de Producto</h3> -->
+
+<!-- para cuando se utilice product.component -->
+<!-- <app-producto></app-producto>
+     <app-producto></app-producto>
+    <app-producto></app-producto> -->
+
+<!-- para product.model.ts -->
+<div class="container mt-3">
+    <h3 class="text-warning">Listado de Productos</h3>
+
+    <div class="">
+        <button class="btn btn-primary my-5" (click)="agregarProducto()">Agregar Producto</button>
+    </div>
+
+    <ul class="list-group w-50 mx-auto">
+        @for (productoElemento of productos; track productoElemento) {
+
+            <!-- llamamos al componente hijo productos -->
+             <!-- producto va adquirir el valor de productoElewmento, que despues pasara al elemento hijo -->
+        <app-producto [producto]="productoElemento"></app-producto>
+        }
+    </ul>
+    
+      <!-- llamamos al componente hijo formulario -->
+    <!-- <app-formulario></app-formulario>--> <!--se elimina esta llamada ya que llamamos al formulario mediante rutas -->
+</div>
